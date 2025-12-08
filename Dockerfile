@@ -1,6 +1,7 @@
 # Étape 1: Construction de l'application
 # Utilise une image Maven avec JDK 11 pour la construction
-FROM maven:3.8.7-openjdk-11-slim AS builder
+FROM maven:3.9.0-eclipse-temurin-11 AS builder
+
 
 # Définir le répertoire de travail
 WORKDIR /app
