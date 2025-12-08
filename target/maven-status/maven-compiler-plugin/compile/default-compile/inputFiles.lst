@@ -1,0 +1,6 @@
+/home/ubuntu/school/src/main/java/tn/m104/rh/entity/Student.java
+/home/ubuntu/school/src/main/java/tn/m104/rh/control/StudentController.java
+/home/ubuntu/school/src/main/java/tn/m104/rh/service/IStudentService.java
+/home/ubuntu/school/src/main/java/tn/m104/rh/SchoolApplication.java
+/home/ubuntu/school/src/main/java/tn/m104/rh/repository/StudentRepository.java
+/home/ubuntu/school/src/main/java/tn/m104/rh/service/StudentServiceImpl.java

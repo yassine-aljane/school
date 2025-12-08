@@ -1,0 +1,6 @@
+tn/m104/rh/SchoolApplication.class
+tn/m104/rh/repository/StudentRepository.class
+tn/m104/rh/control/StudentController.class
+tn/m104/rh/entity/Student.class
+tn/m104/rh/service/IStudentService.class
+tn/m104/rh/service/StudentServiceImpl.class
