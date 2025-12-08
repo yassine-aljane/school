@@ -2,7 +2,6 @@
 # Utilise une image Maven avec JDK 11 pour la construction
 FROM maven:3.9.0-eclipse-temurin-11 AS builder
 
-
 # Définir le répertoire de travail
 WORKDIR /app
 
@@ -20,7 +19,7 @@ RUN mvn clean install -DskipTests
 
 # Étape 2: Création de l'image finale
 # Utilise une image JRE 11 minimale pour l'exécution
-FROM openjdk:11-jre-slim
+FROM openjdk:11-jre-slim-bullseye
 
 # Définir le répertoire de travail
 WORKDIR /app
