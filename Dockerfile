@@ -1,34 +1,14 @@
-# -----------------------------
-# Étape 1: Build
-# -----------------------------
-# Maven + Eclipse Temurin JDK 11
-FROM maven:3.9.0-eclipse-temurin-11 AS builder
+# Image finale avec JRE 17 Alpine
+FROM eclipse-temurin:17-jre-alpine
 
-WORKDIR /app
+# Définir le répertoire de travail
+WORKDIR /lapp
 
-# Copier pom.xml et télécharger les dépendances
-COPY pom.xml .
-RUN mvn dependency:go-offline
+# Copier le JAR depuis le répertoire target
+COPY yassinealj/school-1.0.0.jar app.jar
 
-# Copier le code source
-COPY src ./src
+# Exposer le port de l'application
+EXPOSE 8089
 
-# Compiler le projet et créer le JAR (skip tests)
-RUN mvn clean install -DskipTests
-
-# -----------------------------
-# Étape 2: Image finale
-# -----------------------------
-# JRE 11 valide pour exécution
-FROM eclipse-temurin:11-jre AS runner
-
-WORKDIR /app
-
-# Copier le JAR depuis l’étape builder
-COPY --from=builder /app/target/school-1.0.0.jar app.jar
-
-# Exposer le port Spring Boot
-EXPOSE 8080
-
-# Lancer l’application
+# Commande pour exécuter le JAR
 ENTRYPOINT ["java", "-jar", "app.jar"]
