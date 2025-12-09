@@ -15,7 +15,7 @@ services:
   app-school:
     depends_on:
       - mysqldb
-    image: yassinalj/school:1.0.0
+    image: yassinealj/school:1.0.0
     # build: ./  # Décommenter si tu veux construire depuis le Dockerfile local
     restart: on-failure
     ports:
